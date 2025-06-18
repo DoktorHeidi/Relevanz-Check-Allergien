@@ -189,6 +189,11 @@ def app():
     #############
 
     st.success("Abschlussprojekt von **Heidi und Linda** im Rahmen der Weiterbildung am dsi (Berlin) 🌿")
+    
+    # Navigation unten innerhalb der Seite
+    import timeline
+    if st.button("➡ Zur nächsten Seite 'Timeline'"):
+        timeline.app()
 
 
 
