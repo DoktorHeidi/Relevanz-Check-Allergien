@@ -227,8 +227,8 @@ def app():
             "- Analyse 1 wurde zur Übersicht der Daten durchgeführt.\n"
             "- Analyse 2 wurde mit standardisierten Daten durchgeführt, um mit kMeans Muster erkennen zu können.\n"
             
-            "- Analyse 3 wurde mit gefilterten Daten gearbeitet, wobei hier auch die Transponierung mancher Spalten nötig war.\n"
-            "Ziel der dritten Analyse war es herauszufinden, ob die Anzahl der Fälle bestimmter Diagnose-Schlüssel mit Assoziation zu Allergien \nmit anderen mit Assoziation zu Herz-Kreislauf-, Rheuma- und Atemwegserkrankungen korrelieren.\n"
+            "- Analyse 3 befasst sich mit der Analyse gefilterter Daten.\n"
+            "Mein Ziel der dritten Analyse war es herauszufinden, ob die Anzahl der Fälle bestimmter Diagnose-Schlüssel mit Assoziation zu Allergien \nmit anderen mit Assoziation zu Herz-Kreislauf-, Rheuma- und Atemwegserkrankungen korrelieren.\n"
             ,
             height=300)
         
