@@ -34,7 +34,7 @@ def draw_sidebar():
                 "Timeline", 
                 "Analyse 1: Überblick",
                 "Analyse 2: Mustererkennung",
-                "Analyse 3: ausgewählte Korrelationen"
+                "Analyse 3: ausgewählte & interaktive Korrelationen"
             ], key="main_select")
 
         elif st.session_state.selected_page == "Airbuddy HealthWatch":
@@ -72,7 +72,7 @@ pages_1 = {
     "Timeline": timeline,
     "Analyse 1: Überblick": analyse1,
     "Analyse 2: Mustererkennung": analyse2,
-    "Analyse 3: ausgewählte Korrelationen": analyse_extra
+    "Analyse 3: ausgewählte & interaktive Korrelationen": analyse_extra
 }
 
 # leider stehen aus Gründen des Urheberrechts Lindas Dateien nicht zur Verfügung. Deshalb hier nur eine dummy-Seite
