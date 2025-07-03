@@ -363,64 +363,46 @@ def app():
 
     # 4. grüne Linie als Abtrennung
     st.markdown("""<hr style="border: 3px solid #4CAF50;">""", unsafe_allow_html=True)
+
+    ############ freie Auswahl ohne Zuordnung #######################################
+    st.subheader("Falls andere ICD-Schlüssel mit bekannter Zuordnung korreliert werden sollen, ist dies im Folgenden möglich:")   # für eine ganz freie Auswahl
+    # ICD-Auswahl
+    icd_list = sorted(df["ICD"].dropna().unique())
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        free_select_x = st.selectbox("Wähle ICD X", icd_list)
+    with col2:
+        free_select_y = st.selectbox("Wähle ICD Y", icd_list)
+    
+    if free_select_x != free_select_y:
+        X = df[df["ICD"] == free_select_x]["Faelle"].values.reshape(-1, 1)
+        Y = df[df["ICD"] == free_select_y]["Faelle"].values.reshape(-1, 1)
+    
+        if X.shape[0] == Y.shape[0] and X.shape[0] > 1:
+            model = LinearRegression()
+            model.fit(X, Y)
+            Y_pred = model.predict(X)
+    
+            fig = go.Figure()
+            fig.add_trace(go.Scatter(x=X.flatten(), y=Y.flatten(), mode="markers", name="Datenpunkte", marker=dict(color="blue")))
+            fig.add_trace(go.Scatter(x=X.flatten(), y=Y_pred.flatten(), mode="lines", name="Regression", line=dict(color="red")))
+    
+            fig.update_layout(title=f"{free_select_x} vs. {free_select_y}",
+                            xaxis_title=f"Fallzahlen {free_select_x}",
+                            yaxis_title=f"Fallzahlen {free_select_y}",
+                            showlegend=True)
+            st.plotly_chart(fig, key="fig4")
+        else:
+            st.warning("Nicht genügend oder ungleich viele Datenpunkte für Regression.")
+    else:
+        st.info("Bitte zwei **verschiedene ICD-Codes** auswählen.")
+
+
+    # 5. grüne Linie als Abtrennung
+    st.markdown("""<hr style="border: 3px solid #4CAF50;">""", unsafe_allow_html=True)
+    
     ######################################################################################################
     st.write("Die vorliegende erste Analyse der vom Statistischen Bundesamt veröffentlichten Daten der Krankenkassen zur Arbeitsunfähigkeit kann erste Hinweise auf mögliche Assoziationen verschiedener Diagnosen geben. Da diese allerdings vorwiegend zu Übungs- und Präsentationszwecken erstellt wurde, kann keine Gewähr für die Richtigkeit der dargestellten Ergebnisse übernommen werden. Eine überarbeitete Version könnte allerdings richtungsweisend für weitere Forschungen sein (Heidi Kaulfürst-Soboll, Mai 2025).")
     ######################################################################################################
-    
-    '''
-    # einfachere Version, die nur ICD ohne Beschreibung verwendet
 
-
-    # ICD-Kategorien auswählen
-    icd_option_x = ['J30', 'L20', 'T78', 'J45', 'K52', 'L23', 'M79', 'M06', 'M12', 'L40',
-       'L93', 'L94', 'I10', 'I20', 'I21', 'I25', 'I50', 'I63', 'I70', 'J20',
-       'J22', 'J40', 'J44']
-    icd_option_y = ['J30', 'L20', 'T78', 'J45', 'K52', 'L23', 'M79', 'M06', 'M12', 'L40',
-       'L93', 'L94', 'I10', 'I20', 'I21', 'I25', 'I50', 'I63', 'I70', 'J20',
-       'J22', 'J40', 'J44']
-
-    st.sidebar.header("Einstellungen")
-    selected_icd_x = st.sidebar.selectbox("Wähle ICD für X-Achse", icd_option_x)
-    selected_icd_y = st.sidebar.selectbox("Wähle ICD für Y-Achse", icd_option_y)
-
-    
-    # Daten filtern
-    df_filtered = df[df["ICD"].isin([selected_icd_x, selected_icd_y])]
-    X = df_filtered[df_filtered["ICD"] == selected_icd_x]["Faelle"].values.reshape(-1, 1)
-    Y = df_filtered[df_filtered["ICD"] == selected_icd_y]["Faelle"].values.reshape(-1, 1)
-
-    # Lineare Regression mit sklearn
-    model = LinearRegression()
-    model.fit(X, Y)
-    Y_pred = model.predict(X)
-
-    # Interaktive Visualisierung mit Plotly
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=X.flatten(), y=Y.flatten(), mode="markers", name="Datenpunkte", marker=dict(color="blue")))
-    fig.add_trace(go.Scatter(x=X.flatten(), y=Y_pred.flatten(), mode="lines", name="Regression", line=dict(color="red")))
-
-    fig.update_layout(title=f"{selected_icd_x} vs. {selected_icd_y}", 
-                    xaxis_title=f"Fallzahlen {selected_icd_x}",
-                    yaxis_title=f"Fallzahlen {selected_icd_y}",
-                    showlegend=True)
-
-    st.plotly_chart(fig)
-
-    # Zeige Steigung und Achsenabschnitt
-    st.write("**Regressionsergebnisse**")
-    st.write(f"Steigung: {model.coef_[0][0]:.4f}")
-    st.write(f"Achsenabschnitt: {model.intercept_[0]:.4f}")
-
-    # Tabellenansicht der gefilterten Daten
-    #st.subheader("Gefilterte Daten")
-    #st.dataframe(df_filtered)
-
-    # ----------------------------------------------
-
-    # "I10" - Essenzielle Hypertonie (Bluthochdruck) vs."I20" - Angina pectoris
-    # "J30" - Allergische Rhinitis (z. B. Heuschnupfen, Hausstaub) vs. "M79" - Rheumatismus, nicht näher bezeichnet
-    # "J30" - Allergische Rhinitis (z. B. Heuschnupfen, Hausstaub) vs. "K52" - Allergische Erkrankungen des Verdauungstrakts
-    # "L20" - Atopische Dermatitis (Neurodermitis) vs. "J22" - Akute Infektion der unteren Atemwege
-    # "J20" - Akute Bronchitis vs. "I50" - Herzinsuffizienz (Herzschwäche)
-
-'''
