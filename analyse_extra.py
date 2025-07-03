@@ -81,9 +81,9 @@ def app():
 
     # Zusätzlich ein eigener dataframe, der die ICD-Schlüssel den Diagnosen zuordnet,
     # um bei der Visualisierung darauf zugreifen zu können
-    # Listen mit ICD-Schlüsseln und Diagnosen
+    # Listen mit ICD-Schlüsseln und Diagnosen (hart gecodet, daher muss es bei Ergänzungen manuel ergänzt werden)
     icd = [
-        "J30", "L20", "T78", "J45", "K52", "L23", "M79", "M06", "M12", "L40", "L93", "L94", "I10", "I20", "I21", "I25", "I50", "I63", "I70", "J20", "J22", "J40", "J44"
+        "J30", "L20", "T78", "J45", "K52", "L23", "M79", "M06", "M12", "L40", "L93", "L94", "I10", "I20", "I21", "I25", "I50", "I63", "I70", "J20", "J22", "J40", "J44", "G35"
     ]
 
     diagnosen = [
