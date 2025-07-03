@@ -74,8 +74,10 @@ def app():
         #   "J60",  # Pneumokoniose durch Kohlenstaub #   
         #   "J70",  # Lungenerkrankungen durch äußere Einflüsse
 
+    icd_ms = ["G35"] # Multiple Sklerose
+    
     # Alle ICD-Listen in einer einzigen Liste zusammenführen
-    icd_gesamt = icd_allergie + icd_rheuma + icd_herz + icd_atem
+    icd_gesamt = icd_allergie + icd_rheuma + icd_herz + icd_atem + icd_ms
 
     # Zusätzlich ein eigener dataframe, der die ICD-Schlüssel den Diagnosen zuordnet,
     # um bei der Visualisierung darauf zugreifen zu können
@@ -107,7 +109,8 @@ def app():
         "Akute Bronchitis",
         "Akute Infektion der unteren Atemwege",
         "Bronchitis, nicht näher bezeichnet",
-        "Sonstige chronisch obstruktive Lungenerkrankung"
+        "Sonstige chronisch obstruktive Lungenerkrankung",
+        "Multiple Sklerose"
     ]
     
     # DataFrame direkt mit Spaltennamen erstellen
@@ -122,7 +125,7 @@ def app():
 
 
     # Visualisierung der Matrix
-    st.subheader(f"Korrelationsmatrix nach Diagnosen zu Allergie, Herz-Kreislauf, Rheuma und Atemwegen")
+    st.subheader(f"Korrelationsmatrix nach Diagnosen zu Allergie, Herz-Kreislauf, Rheuma und Atemwege und Multiple Sklerose")
     st.subheader(f"der NICHT normalisierten Krankenkassendaten nach Diagnosen (ICD-Schlüssel) \n (zwischen 2011 bis 2020; Stand: Mai 2025; ohne Gewähr)")
     fig, ax = plt.subplots(figsize=(26, 12))  # ✅ Explizite Figur erstellen
     sns.heatmap(corr_matrix_auswahl_nicht_normalisiert, annot=True, cmap="Spectral", linewidths=0.4, ax=ax, annot_kws={"fontsize": 20})
