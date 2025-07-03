@@ -368,12 +368,15 @@ def app():
     st.subheader("Falls andere ICD-Schlüssel mit bekannter Zuordnung korreliert werden sollen, ist dies im Folgenden möglich:")   # für eine ganz freie Auswahl
     # ICD-Auswahl
     icd_list = sorted(df["ICD"].dropna().unique())
+
+    # Voreinstellung auf "J06 - akute Infektionen der oberen Atemwege, als eine der häufigsten Diagnosen"
+    default_index = icd_list.index("J06")
     
     col1, col2 = st.columns(2)
     with col1:
-        free_select_x = st.selectbox("Wähle ICD X", icd_list)
+        free_select_x = st.selectbox("Wähle ICD X", icd_list, index=default_index)
     with col2:
-        free_select_y = st.selectbox("Wähle ICD Y", icd_list)
+        free_select_y = st.selectbox("Wähle ICD Y", icd_list, index=default_index)
     
     if free_select_x != free_select_y:
         X = df[df["ICD"] == free_select_x]["Faelle"].values.reshape(-1, 1)
