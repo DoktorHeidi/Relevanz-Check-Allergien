@@ -7,7 +7,7 @@ Da diese Analyse Teil einer gemeinsamen Präsentation mit meiner Mitstreiterin L
 
 Die Visualisierungen sind für die Ansicht auf einem **Computerbildschirm optimiert**.
 
-**Anspruch dieser Analyse**
+**Anspruch dieser Analyse:**
 Die analysierten Daten waren in Form von **PDF-Dateien** auf der Homepage des Bundesgesundheitsministeriums verfügbar. Um sie zu verarbeiten, wurden sie von mir mittels Webscraping **automatisiert** heruntergeladen. Da die enthaltenen Tabellen uneinheitlich formatiert waren, musste eine geeignete Methode gefunden werden, um **nur relevante Teile** zu extrahieren. Als beste Lösung erwies sich die Nutzung von pdfPlumber.
 
 Nach Erstellung eines Dataframes erfolgte eine weitere **Umgestaltung und Erweiterung der Daten** durch übergeordnete ICD-Kategorien. 
