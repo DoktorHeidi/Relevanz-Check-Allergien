@@ -6,13 +6,13 @@ from PIL import Image # dafür pip install pillow, falls noch nicht geschehen...
 # st.set_page_config(page_title="Bildplatzierungs-App", layout="wide")
 
 def app():
-    st.markdown("### Willkommen zu unserer Projekt-Präsentation")
-    st.write(" Wir haben uns mit Fragestellungen zum Thema Gesundheit beschäftigt.")
+    st.markdown("### Willkommen zu meiner Projekt-Präsentation")
+    st.write(" Ich habe mich mit der spannenenden Frage beschäftigt, ob die Prävalenz von Allergien möglicherweise mit der von bestimmten Volkskrankheiten assoziiert ist.")
     st.write("Für eine kurze Einführung nutze die Pfeile ..." )
 
     #datum = datetime.today().strftime('%d.%m.%Y')
-    datum = "16. Mai 2025"
-    name = "Heidi und Linda"
+    datum = "update 3. November 2025"
+    #name = "Heidi"
 
 
     # Session State für Navigation
@@ -188,14 +188,9 @@ def app():
 
     #############
 
-    st.success("Abschlussprojekt von **Heidi und Linda** im Rahmen der Weiterbildung am dsi (Berlin) 🌿")
-    
-    # Navigation unten innerhalb der Seite
-    import timeline
-    if st.button("➡ Zur nächsten Seite 'Timeline'"):
-        timeline.app()
+    #st.success("Abschlussprojekt von **Heidi** im Rahmen der Weiterbildung am dsi (Berlin) 🌿")
 
-
+    #button_timeline = st.button("Timeline")
 
 if __name__ == "__main__":
     app()
