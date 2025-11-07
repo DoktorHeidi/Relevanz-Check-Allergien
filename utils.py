@@ -15,46 +15,46 @@ def draw_sidebar():
         # Manuelle Auswahlmöglichkeiten außerhalb der `radio`-Buttons
         option = st.selectbox("Kategorie wählen", [
             "Relevanz-Check von Allergien", 
-            "Airbuddy HealthWatch"
+            "Projekt 2"
             ])
 
         # Automatische Regulierung: Auswahl der Buttons wird auf Basis der `option`-Wahl zurückgesetzt
         if option == "Relevanz-Check von Allergien":
             st.session_state.selected_page = "Relevanz-Check von Allergien"
-        elif option == "Airbuddy HealthWatch":
-            st.session_state.selected_page = "Airbuddy HealthWatch"
+        elif option == "Projekt 2":
+            st.session_state.selected_page = "Projekt 2"
         else:
             st.session_state.selected_page = "Relevanz-Check von Allergien"  # Falls Nichts gewählt wird
 
         # Dynamische `radio`-Buttons erscheinen nur für die aktivierte Kategorie
-        main_select, health_select = None, None
+        main_select, project_select = None, None
         if st.session_state.selected_page == "Relevanz-Check von Allergien":
             main_select = st.radio("Wähle eine Seite", [
                 "Einführung",
                 "Timeline", 
                 "Analyse 1: Überblick",
                 "Analyse 2: Mustererkennung",
-                "Analyse 3: ausgewählte & interaktive Korrelationen"
-            ], key="main_select")
+                "Analyse 3: ausgewählte und interaktive Korrelationen"
+            ], key="main_select") #Zuordnung zu den Seiten erfolgt weiter unten
 
-        elif st.session_state.selected_page == "Airbuddy HealthWatch":
-            health_select = st.radio("Wähle eine Analyse", [
-                "BUDDY", 
-                "Luftqualität", 
-                "Pollen", 
-                "Bilanz", 
-                "Gewitter",
-                "Sahara", 
-                "Urlaub", 
-                "ICD", 
-                "Real"
-            ], key="health_select")
+        elif st.session_state.selected_page == "Projekt 2":
+            project_select = st.radio("Wähle eine Analyse", [
+                "a", 
+                "b", 
+                "c", 
+                "d", 
+                "e",
+                "f", 
+                "g", 
+                "h", 
+                "i"
+            ], key="projct_select")
 
         st.markdown("---")
-        st.write("🌿 **Presented by Heidi (Relevanz-Check) &  Linda (HealthWatch)** 🌿\n\n")
-        st.image("dsi_Bild.png")
+        st.write("🌿 **Presented by** 🌿\n\n")
+        st.image("mein_Logo.png")
 
-    return main_select, health_select
+    return main_select, project_select
 
 
 
@@ -64,28 +64,28 @@ import analyse1
 import analyse2
 import analyse_extra
 import dummy
-#import klima
 
-# Zuordnung der Menüpunkte der sidebar zu den Dateien
+
+# Zuordnung der Menüpunkte der sidebar (siehe Code weiter oben) zu den Dateien
 pages_1 = {
     "Einführung": introduction_,
     "Timeline": timeline,
     "Analyse 1: Überblick": analyse1,
     "Analyse 2: Mustererkennung": analyse2,
-    "Analyse 3: ausgewählte & interaktive Korrelationen": analyse_extra
+    "Analyse 3: ausgewählte und interaktive Korrelationen": analyse_extra
 }
 
-# leider stehen aus Gründen des Urheberrechts Lindas Dateien nicht zur Verfügung. Deshalb hier nur eine dummy-Seite
+# Platzhalter für weiteres Projekt
 pages_2 = {
-    "BUDDY": dummy,
-    "Luftqualität": dummy,
-    "Pollen": dummy,
-    "Bilanz": dummy,
-    "Gewitter": dummy,
-    "Sahara": dummy,
-    "Urlaub": dummy,
-    "ICD": dummy,
-    "Real": dummy
+    "a": dummy,
+    "b": dummy,
+    "c": dummy,
+    "d": dummy,
+    "e": dummy,
+    "f": dummy,
+    "g": dummy,
+    "h": dummy,
+    "i": dummy
 }
 
 # Funktion zum Anzeigen der Seiten
@@ -93,6 +93,6 @@ def show_page(module):
     if hasattr(module, "app") and callable(module.app):
         module.app()
     else:
-        st.write("Diese Seite ist nicht implementiert.")
+        st.write("Diese Seite ist noch nicht implementiert.")
 
     
