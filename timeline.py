@@ -101,8 +101,8 @@ def app():
         showlegend=False
     )
     st.title("Timeline - Heidi")
-    st.subheader("Idee ???:    💡 Relevanz-Check von Allergien! 🤔 Aber wie???")
-    st.subheader("Daten ???:   📜 Fallzahlen aus Krankenkassen- und Krankenhausstatistiken mit Diagnoseschlüsseln")
+    st.subheader("Idee:    💡 Relevanz-Check von Allergien!")
+    st.subheader("Daten:   📜 Fallzahlen aus Krankenkassen- und Krankenhausstatistiken mit Diagnoseschlüsseln")
 
     st.markdown("**Frage**: Welche Relevanz haben Allergien bei der Meldung zur Arbeitsunfähigkeit?\n"
             "Lassen sich Muster erkennen, die einen Hinweis darauf geben könnten, dass auch primär nicht als Allergie eingestufte Krankheiten eigentlich doch mit Allergien in Verbindung gebracht werden könnten?")
@@ -216,19 +216,19 @@ def app():
     "Analyse 3: ausgewählte Korrelationen": analyse_extra'''
     
     st.text_area("Anspruch dieses Projektteils",         
-            "Der Anspruch lag im Besonderen darin, dass die hier analysierten Daten nur in Form von pdf-Dateien auf der Homepage des Bundesgesundheitsministeriums zugänglich waren.\n"
+            "Die hier analysierten Daten waren nur in Form von pdf-Dateien auf der Homepage des Bundesgesundheitsministeriums zugänglich.\n"
             "Diese wurden von mir über Webscraping automatisiert heruntergeladen.\n"
             "Da die enthaltenen Tabellen nicht einheitlich formatiert waren, galt es eine Methode zu finden, nur relevante Teile zu extrahieren.\n"
-            "Als beste Lösung hat sich für mich die Verwendung von pdfplumber erwiesen.\n"
-            
+                        
             "Zur Vorbereitung der Daten gehörte nach Erstellung eines Dataframes eine weitere Umgestaltung und Erweiterung mit übergeordneten ICD-Kategorien.\n\n"
             
             "Die Analyse wurde in drei Schritten vorgenommen:\n"
             "- Analyse 1 wurde zur Übersicht der Daten durchgeführt.\n"
             "- Analyse 2 wurde mit standardisierten Daten durchgeführt, um mit kMeans Muster erkennen zu können.\n"
             
-            "- Analyse 3 befasst sich mit der Analyse gefilterter Daten.\n"
-            "Mein Ziel der dritten Analyse war es herauszufinden, ob die Anzahl der Fälle bestimmter Diagnose-Schlüssel mit Assoziation zu Allergien \nmit anderen mit Assoziation zu Herz-Kreislauf-, Rheuma- und Atemwegserkrankungen korrelieren.\n"
+            "- Analyse 3 wurde mit gefilterten Daten gearbeitet, wobei hier auch die Transponierung mancher Spalten nötig war.\n"
+            "Ziel der dritten Analyse war es herauszufinden, ob die Anzahl der Fälle bestimmter Diagnose-Schlüssel mit Assoziation zu Allergien \nmit anderen mit Assoziation zu Herz-Kreislauf-, Rheuma- und Atemwegserkrankungen korrelieren. Zudem wurde Multiple Sklerose als Autoimmunerkrankung in die Auswahl mit aufgenommen, die sich grundsätzlich von Allergien unterscheiden.\n"
+            " Zum Schluss besteht die Möglichkeit der freien Auswahl von Diagnose-Schlüsseln zur Korrelation."
             ,
             height=300)
         
