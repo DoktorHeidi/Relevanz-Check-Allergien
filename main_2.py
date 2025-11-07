@@ -7,20 +7,29 @@ st.set_page_config(
     layout="wide"
 )
 
-
-
 import utils
 
-
-
 # Sidebar initialisieren
-main_select, health_select = utils.draw_sidebar()
+main_select, project_select = utils.draw_sidebar()
+
+###################
+# hier für Steuerung über Button eingefügt (kommt noch)
+#import introduction_
+#if introduction_.button_timeline:
+#    # Hier hart codiert, z.B. auf "Timeline" springen
+#    utils.set_selected_page("Timeline")   ##funktion wird in utils definiert
+#    # Aktualisierung von main_select und project_select
+#    main_select, project_select = utils.draw_sidebar()
+####################
+
 
 # Auswahl prüfen und entsprechende Seite laden
 if main_select in utils.pages_1:
     utils.show_page(utils.pages_1[main_select])
-elif health_select in utils.pages_2:
-    utils.show_page(utils.pages_2[health_select])
+
+elif project_select in utils.pages_2:
+    utils.show_page(utils.pages_2[project_select])
+
 else:
     st.write("In der Navigation kommst du weiter!")
 
