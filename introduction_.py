@@ -8,7 +8,7 @@ from PIL import Image # dafür pip install pillow, falls noch nicht geschehen...
 def app():
     st.markdown("### Es wird spannend: was uns Daten zur Arbeitsunfähigkeit verraten ...")
     st.write(" In diesem Projekt habe ich mich mit der Frage beschäftigt, ob die Prävalenz von Allergien möglicherweise mit der von bestimmten Volkskrankheiten assoziiert ist.")
-    st.write("Für eine kurze Einführung zur Thematik nutze die Pfeile (⬅️ ➡️) oder gehe direkt über die sidebar zur Timeline, wenn dich meine Herangehensweise interessiert und dann zu den Analysen."
+    st.write("Für eine kurze Einführung zur Thematik nutze die Pfeile (⬅️ ➡️) oder gehe direkt über die sidebar zur Timeline, wenn dich meine Herangehensweise interessiert und dann zu den Analysen.")
     st.write("Kleiner Tipp: Am spannendsten wird es in Analyse 3 😉, über die sidebar kannst du auch direkt dorthin springen.")
     #datum = datetime.today().strftime('%d.%m.%Y')
     datum = "update 3. November 2025"
