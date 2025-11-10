@@ -6,10 +6,10 @@ from PIL import Image # dafür pip install pillow, falls noch nicht geschehen...
 # st.set_page_config(page_title="Bildplatzierungs-App", layout="wide")
 
 def app():
-    st.markdown("### Willkommen zu meiner Projekt-Präsentation")
-    st.write(" Ich habe mich mit der spannenenden Frage beschäftigt, ob die Prävalenz von Allergien möglicherweise mit der von bestimmten Volkskrankheiten assoziiert ist.")
-    st.write("Für eine kurze Einführung nutze die Pfeile ..." )
-
+    st.markdown("### Es wird spannend: was uns Daten zur Arbeitsunfähigkeit verraten ...")
+    st.write(" In diesem Projekt habe ich mich mit der Frage beschäftigt, ob die Prävalenz von Allergien möglicherweise mit der von bestimmten Volkskrankheiten assoziiert ist.")
+    st.write("Für eine kurze Einführung zur Thematik nutze die Pfeile (⬅️ ➡️) oder gehe direkt über die sidebar zur Timeline, wenn dich meine Herangehensweise interessiert und dann zu den Analysen."
+    st.write("Kleiner Tipp: Am spannendsten wird es in Analyse 3 😉, über die sidebar kannst du auch direkt dorthin springen.")
     #datum = datetime.today().strftime('%d.%m.%Y')
     datum = "update 3. November 2025"
     #name = "Heidi"
