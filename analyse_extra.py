@@ -406,5 +406,5 @@ def app():
     st.markdown("""<hr style="border: 3px solid #4CAF50;">""", unsafe_allow_html=True)
     
     ######################################################################################################
-    st.write("Die vorliegende erste Analyse der vom Statistischen Bundesamt veröffentlichten Daten der Krankenkassen zur Arbeitsunfähigkeit kann erste Hinweise auf mögliche Assoziationen verschiedener Diagnosen geben. Da diese allerdings vorwiegend zu Übungs- und Präsentationszwecken erstellt wurde, kann keine Gewähr für die Richtigkeit der dargestellten Ergebnisse übernommen werden. Eine überarbeitete Version könnte allerdings richtungsweisend für weitere Forschungen sein (Heidi Kaulfürst-Soboll, November 2025).")
+    st.write("Die vorliegende erste Analyse der vom Statistischen Bundesamt veröffentlichten Daten der Krankenkassen zur Arbeitsunfähigkeit kann erste Hinweise auf mögliche Assoziationen verschiedener Diagnosen geben. Da diese allerdings vorwiegend zu Übungs- und Präsentationszwecken erstellt wurde, kann keine Gewähr für die Richtigkeit der dargestellten Ergebnisse übernommen werden. Eine überarbeitete Version könnte allerdings richtungsweisend für weitere Forschungen sein (Heidi Kaulfürst-Soboll).")
     ######################################################################################################
