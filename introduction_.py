@@ -8,10 +8,10 @@ from PIL import Image # dafür pip install pillow, falls noch nicht geschehen...
 def app():
     st.markdown("### Es wird spannend: was uns Daten zur Arbeitsunfähigkeit verraten ...")
     st.write(" In diesem Projekt habe ich mich mit der Frage beschäftigt, ob die Prävalenz von Allergien möglicherweise mit der von bestimmten Volkskrankheiten assoziiert ist.")
-    st.write("Für eine kurze Einführung zur Thematik nutze die Pfeile (⬅️ ➡️) oder gehe direkt über die sidebar zur Timeline, wenn dich meine Herangehensweise interessiert und dann zu den Analysen.")
-    st.write("Kleiner Tipp: Am spannendsten wird es in Analyse 3 😉, über die sidebar kannst du auch direkt dorthin springen.")
+    st.write("Für eine kurze Einführung zur Thematik nutze die Pfeile (⬅️ ➡️) oder gehe direkt über die Sidebar zur Timeline, wenn dich meine Herangehensweise interessiert und dann zu den Analysen.")
+    st.write("Kleiner Tipp: Am spannendsten wird es in Analyse 3 😉, über die Sidebar kannst du auch direkt dorthin springen.")
     #datum = datetime.today().strftime('%d.%m.%Y')
-    datum = "update 3. November 2025"
+    datum = "update 19. Dezember 2025"
     #name = "Heidi"
 
 
@@ -187,8 +187,6 @@ def app():
     st.markdown(f"<p style='text-align: center; font-size: 8px;'>{' '.join(dots)}</p>", unsafe_allow_html=True)
 
     #############
-
-    #st.success("Abschlussprojekt von **Heidi** im Rahmen der Weiterbildung am dsi (Berlin) 🌿")
 
     #button_timeline = st.button("Timeline")
 
