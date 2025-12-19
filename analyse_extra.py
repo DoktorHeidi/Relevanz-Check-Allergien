@@ -126,7 +126,7 @@ def app():
 
     # Visualisierung der Matrix
     st.subheader(f"Korrelationsmatrix nach Diagnosen zu Allergie, Herz-Kreislauf, Rheuma und Atemwege und Multiple Sklerose")
-    st.subheader(f"der NICHT normalisierten Krankenkassendaten nach Diagnosen (ICD-Schlüssel) \n (zwischen 2011 bis 2020; Stand: November 2025; ohne Gewähr)")
+    st.subheader(f"der NICHT normalisierten Krankenkassendaten nach Diagnosen (ICD-Schlüssel) \n (zwischen 2011 bis 2020; Stand: Dezember 2025; ohne Gewähr)")
     fig, ax = plt.subplots(figsize=(26, 12))  # ✅ Explizite Figur erstellen
     sns.heatmap(corr_matrix_auswahl_nicht_normalisiert, annot=True, cmap="Spectral", linewidths=0.4, ax=ax, annot_kws={"fontsize": 20})
 
