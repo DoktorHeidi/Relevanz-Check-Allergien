@@ -3,8 +3,6 @@ Analyse von **Krankenkassendaten nach Diagnoseschlüsseln mit Fokus auf Allergie
 
 Diese Analyse entstand im Rahmen der Abschlusspräsentation meiner Weiterbildung. **Idee, Recherche, Datenauswahl und Umsetzung** wurden vollständig von mir durchgeführt. Die gewonnenen Erkenntnisse können als **Grundlage für weitere Analysen** dienen, sind jedoch nicht als abschließend zu betrachten und könnten Fehler enthalten. Eine Gewähr für die Richtigkeit der Daten und der daraus gewonnenen Erkenntnisse kann nicht übernommen werden.
 
-Da diese Analyse Teil einer gemeinsamen Präsentation mit meiner Mitstreiterin Linda war, habe ich eine **Einleitung zur Gesamt-Thematik** erstellt. Ihren Beitrag habe ist zumindest in der Sidebar integriert. Aus urheberrechtlichen Gründen sind jedoch keine Seiten von ihr enthalten.
-
 Die Visualisierungen sind für die Ansicht auf einem **Computerbildschirm optimiert**.
 
 **Anspruch dieser Analyse:**
